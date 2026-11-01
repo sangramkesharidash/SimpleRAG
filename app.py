@@ -60,7 +60,8 @@ def load_single_file(file_path: str):
         logging.warning(f"Skipped file larger than 2MB: {filename}")
         return []
 
-    env_match = re.search(r'/(M\d+)/', file_path)
+    # Environment = first sub-folder under DATA_DIR (e.g. ./data/env-a/file.yaml -> "env-a")
+    env_match = re.search(r'/data/([^/]+)/', file_path)
     env_name = env_match.group(1) if env_match else "Global"
 
     try:
@@ -210,7 +211,7 @@ def load_rag_chain():
         "You are a Kubernetes infrastructure and capacity planning analyst. "
         "Use the provided context snippets to answer the question accurately.\n\n"
         "CRITICAL FORMATTING INSTRUCTIONS:\n"
-        "1. Identify the 'TARGET_ENVIRONMENT' field (e.g., M1, M3, M6, M19, M21) embedded in each context snippet.\n"
+        "1. Identify the 'TARGET_ENVIRONMENT' field (e.g., env-a, env-b) embedded in each context snippet.\n"
         "2. When requested for CPU/Memory requests or limits across environments, generate STRICTLY a Markdown Table with these 6 exact columns:\n"
         "| Environment | Service Name | CPU Request | CPU Limit | Memory Request | Memory Limit |\n"
         "3. DO NOT output Python, shell, or HTTP code snippets unless explicitly requested.\n\n"
