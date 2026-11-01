@@ -4,6 +4,7 @@
 /*
 !/.gitignore
 !/README.md
+!/LICENSE
 !/app.py
 !/check_db.py
 !/startApp.sh
