@@ -90,3 +90,7 @@ Set at the top of `app.py`:
 ## Part of
 
 [sangramkesharidash.github.io](https://sangramkesharidash.github.io) · a series on RAG and agentic AI: SimpleRAG → GraphRAG → AgenticRAG → AgenticObservability.
+
+## License
+
+[MIT](LICENSE) © 2026 Sangram Keshari Dash
