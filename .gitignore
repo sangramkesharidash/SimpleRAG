@@ -1,0 +1,10 @@
+# Allowlist: ignore everything, then re-include only the public files.
+# data/, chroma_db*/ (vector stores of private documents), logs and local prototypes
+# must never be committed.
+/*
+!/.gitignore
+!/README.md
+!/app.py
+!/check_db.py
+!/startApp.sh
+.DS_Store
